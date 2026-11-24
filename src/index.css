@@ -13,7 +13,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100dvh;
-  color: #362923;
+  color: #f2e8d5;
   font-family: 'Segoe UI', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -25,8 +25,8 @@ body::before {
   z-index: -1;
   background:
     linear-gradient(
-      rgba(25, 15, 10, 0.25),
-      rgba(25, 15, 10, 0.35)
+      rgba(25, 15, 10, 0.35),
+      rgba(25, 15, 10, 0.45)
     ),
     url('/background.png') center / cover no-repeat;
 }
@@ -43,7 +43,7 @@ button {
 
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid #68202d;
+  outline: 2px solid #bda38c;
   outline-offset: 3px;
 }
 
@@ -60,8 +60,60 @@ button:active:not(:disabled) {
 }
 
 #root .app {
-  background: rgba(242, 232, 213, 0.88);
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  box-shadow: none;
+  color: #f2e8d5;
+}
+
+/* Светлые заголовки */
+
+#root .brand strong,
+#root .brand span,
+#root .greeting h1,
+#root .greeting > span,
+#root .page-heading h1,
+#root .page-heading > span,
+#root .page-heading p,
+#root .section-heading h2,
+#root .section-heading button,
+#root .section-heading > svg,
+#root .booking-section h2 {
+  color: #f2e8d5;
+}
+
+#root .greeting,
+#root .page-heading,
+#root .section-heading,
+#root .booking-section h2 {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Кремовые карточки */
+
+#root .info-card,
+#root .master-card,
+#root .service-card,
+#root .empty-card,
+#root .appointment-card {
+  background: #faf4e8;
+  color: #362923;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Нижняя панель */
+
+#root .bottom-nav {
+  background: #68202d;
+  border-radius: 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Подпись бренда */
+
+#root .footer-brand,
+#root .footer-brand > strong,
+#root .footer-brand > svg {
+  color: #f2e8d5;
 }
 
 ::selection {
