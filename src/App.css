@@ -1,0 +1,858 @@
+/* =========================================
+   TILIAT BARBER — BRITISH CLASSIC
+   ========================================= */
+
+:root {
+  --bg: #f2e8d5;
+  --card: #faf4e8;
+  --card-light: #e8dac5;
+  --accent: #68202d;
+  --accent-dark: #481620;
+  --text: #362923;
+  --muted: #887264;
+  --beige: #bda38c;
+  --border: #dfd0ba;
+}
+
+/* ОСНОВА ПРИЛОЖЕНИЯ */
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  text-align: left;
+}
+
+.content {
+  padding: 5px 20px 150px;
+  animation: appear 0.3s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ШАПКА */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 16px;
+}
+
+.brand strong {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.brand span {
+  display: block;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 6px;
+}
+
+.icon-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 16px;
+  background: var(--card-light);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+}
+
+/* ПРИВЕТСТВИЕ */
+
+.greeting {
+  margin: 8px 0 24px;
+}
+
+.greeting > span,
+.page-heading > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.greeting h1,
+.page-heading h1 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 8px 0;
+  color: var(--text);
+}
+
+/* ГЛАВНЫЙ БАННЕР */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 25px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--bg);
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(36, 23, 19, 0.96) 0%,
+      rgba(36, 23, 19, 0.65) 45%,
+      rgba(36, 23, 19, 0.12) 100%
+    ),
+    url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=90');
+
+  background-color: #362923;
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 8px 25px rgba(54, 41, 35, 0.12);
+}
+
+.hero-tag {
+  align-self: flex-start;
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  color: var(--bg);
+  border: 1px solid rgba(242, 232, 213, 0.4);
+  border-radius: 30px;
+  padding: 9px 13px;
+  margin-bottom: 35px;
+  background: rgba(54, 41, 35, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.hero h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 7vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.12;
+  margin: 0;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+  color: #dfcdb9;
+  font-size: 13px;
+  margin: 12px 0 25px;
+}
+
+/* ОСНОВНЫЕ КНОПКИ */
+
+.primary-button {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 17px;
+  padding: 17px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hero .primary-button {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.primary-button:active {
+  transform: scale(0.97);
+}
+
+.primary-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.primary-button.full {
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* ИНФОРМАЦИЯ О БАРБЕРШОПЕ */
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+  margin: 15px 0 30px;
+}
+
+.info-card > svg:first-child {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.info-card > svg:last-child {
+  color: var(--muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.info-card strong {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.info-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+
+/* ЗАГОЛОВКИ РАЗДЕЛОВ */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 15px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  letter-spacing: -0.6px;
+  margin: 0;
+  color: var(--text);
+}
+
+.section-heading button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.section-heading > svg {
+  color: var(--accent);
+}
+
+/* КАРТОЧКИ МАСТЕРОВ */
+
+.masters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.master-card {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 7px 7px 13px;
+  text-align: left;
+  min-width: 0;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.master-card:active {
+  transform: scale(0.96);
+}
+
+.master-photo {
+  position: relative;
+  aspect-ratio: 0.75;
+  border-radius: 15px;
+  background-color: var(--beige);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  font-size: 0;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.master-card:nth-child(1) .master-photo {
+  background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=85');
+}
+
+.master-card:nth-child(2) .master-photo {
+  background-image: url('https://images.unsplash.com/photo-1506794778202-cbf6066b2bc1?auto=format&fit=crop&w=400&q=85');
+}
+
+.master-card:nth-child(3) .master-photo {
+  background-image: url('https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=400&q=85');
+}
+
+.rating {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--bg);
+  background: var(--accent);
+  border-radius: 10px;
+  padding: 5px 7px;
+  font-size: 10px;
+}
+
+.master-card > strong {
+  display: block;
+  font-size: 12px;
+  color: var(--text);
+  margin: 0 3px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.master-card > span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0 3px;
+}
+
+/* АКЦИЯ */
+
+.promo-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-dark)
+  );
+  color: var(--bg);
+  border-radius: 26px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.promo-card::after {
+  content: '15%';
+  position: absolute;
+  right: -15px;
+  bottom: -25px;
+  font-family: Georgia, serif;
+  font-size: 125px;
+  font-weight: 700;
+  color: rgba(242, 232, 213, 0.07);
+  pointer-events: none;
+}
+
+.promo-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.promo-card > span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.promo-card h2 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 12px 0 7px;
+}
+
+.promo-card p {
+  font-size: 13px;
+  margin: 0 0 18px;
+  color: #dfcdb9;
+}
+
+.promo-card button {
+  background: var(--bg);
+  color: var(--accent);
+  border: none;
+  border-radius: 14px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+}
+
+/* ЗАГОЛОВКИ СТРАНИЦ */
+
+.page-heading {
+  margin: 15px 0 30px;
+}
+
+.page-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* СТРАНИЦА УСЛУГ */
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 13px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.service-card:active {
+  transform: scale(0.98);
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #ecdfcf;
+  color: var(--accent);
+}
+
+.service-info {
+  flex: 1;
+}
+
+.service-info strong {
+  display: block;
+  font-size: 13px;
+}
+
+.service-info span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.service-price {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.service-card > svg {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* СТРАНИЦА ЗАПИСИ */
+
+.booking-section {
+  margin: 26px 0;
+}
+
+.booking-section h2 {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.select-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 17px;
+  margin-bottom: 9px;
+  text-align: left;
+  font-size: 13px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.select-card p {
+  color: var(--muted);
+  margin: 5px 0 0;
+  font-size: 11px;
+}
+
+.select-card.selected,
+.time-button.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.select-card.selected p {
+  color: #dfcdb9;
+}
+
+.date-input {
+  width: 100%;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 18px;
+  font-size: 16px;
+  color-scheme: light;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+
+.time-button {
+  padding: 14px 5px;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  font-size: 13px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* ПРОФИЛЬ */
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    145deg,
+    var(--accent),
+    var(--accent-dark)
+  );
+  border-radius: 28px;
+  padding: 30px;
+  color: var(--bg);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 27px;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.profile-card h2 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  margin: 15px 0 8px;
+}
+
+.profile-card > span {
+  color: #dfcdb9;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* ПУСТОЙ СПИСОК ЗАПИСЕЙ */
+
+.empty-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.empty-card > svg {
+  color: var(--accent);
+}
+
+.empty-card h3 {
+  font-family: Georgia, serif;
+  margin: 18px 0 7px;
+}
+
+.empty-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+/* СОЗДАННЫЕ ЗАПИСИ */
+
+.appointment-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.status {
+  display: inline-block;
+  color: var(--accent);
+  background: #ecdfcf;
+  border-radius: 10px;
+  padding: 7px 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.appointment-card h3 {
+  font-family: Georgia, serif;
+  margin: 15px 0 10px;
+}
+
+.appointment-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.appointment-card > strong {
+  color: var(--accent);
+}
+
+.cancel-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border-radius: 13px;
+  background: #f4e2df;
+  color: var(--accent);
+  border: 1px solid #dfc0bd;
+}
+
+/* ПОДПИСЬ БРЕНДА */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  padding: 35px 0;
+}
+
+.footer-brand > svg {
+  color: var(--accent);
+}
+
+.footer-brand > strong {
+  font-family: Georgia, serif;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.footer-brand > span {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   ПЛАВАЮЩАЯ НИЖНЯЯ ПАНЕЛЬ
+   ========================================= */
+
+.bottom-nav {
+  position: fixed;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 32px);
+  max-width: 460px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 12px 6px;
+
+  background: rgba(104, 32, 45, 0.97);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 32px;
+
+  box-shadow: 0 10px 35px rgba(54, 41, 35, 0.22);
+
+  z-index: 100;
+}
+
+.nav-item {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  background: transparent;
+  color: #d4b5b7;
+
+  border: none;
+  padding: 3px;
+
+  transition: color 0.2s;
+}
+
+.nav-icon {
+  width: 53px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s;
+}
+
+.nav-item > span {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.nav-item.active {
+  color: var(--bg);
+}
+
+.nav-item.active .nav-icon {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.nav-item:active .nav-icon {
+  transform: scale(0.9);
+}
+
+/* АДАПТАЦИЯ ПОД МАЛЕНЬКИЕ ЭКРАНЫ */
+
+@media (max-width: 360px) {
+  .content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero {
+    padding: 20px;
+    min-height: 320px;
+  }
+
+  .service-card {
+    gap: 8px;
+    padding: 14px 10px;
+  }
+
+  .master-card > strong {
+    font-size: 11px;
+  }
+
+  .master-card > span {
+    font-size: 10px;
+  }
+
+  .masters-grid {
+    gap: 7px;
+  }
+
+  .nav-icon {
+    width: 46px;
+  }
+
+  .nav-item > span {
+    font-size: 9px;
+  }
+}
+
+/* УМЕНЬШЕНИЕ АНИМАЦИЙ */
+
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+
+  .app * {
+    transition: none;
+  }
+}

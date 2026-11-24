@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  background: #261914;
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100dvh;
+  color: #362923;
+
+  background-image:
+    linear-gradient(
+      rgba(25, 15, 10, 0.15),
+      rgba(25, 15, 10, 0.25)
+    ),
+    url('/background.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  font-family: 'Segoe UI', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #68202d;
+  outline-offset: 3px;
+}
+
+button:active:not(:disabled) {
+  opacity: 0.85;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: left;
+}
+
+.app {
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+::selection {
+  background: #68202d;
+  color: #f2e8d5;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@media (max-width: 500px) {
+  html,
+  body {
+    background: #f2e8d5;
+  }
+
+  .app {
+    box-shadow: none;
+  }
+}
